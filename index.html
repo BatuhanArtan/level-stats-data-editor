@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Helper - Decimal Converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📊 Excel Helper</h1>
+            <p class="subtitle">Convert comma decimals to dot format</p>
+        </header>
+
+        <!-- Drop Zone -->
+        <div id="dropZone" class="drop-zone">
+            <div id="dropHint" class="drop-hint">
+                <span class="icon">📁</span>
+                <p>Drag and drop your Excel or CSV file here</p>
+                <span class="or">or</span>
+                <label class="btn-secondary">
+                    Select File
+                    <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" hidden>
+                </label>
+            </div>
+            <div id="fileInfo" class="file-info hidden">
+                <span class="icon">✅</span>
+                <p id="fileName" class="file-name">file.xlsx</p>
+                <p id="fileStats" class="file-stats">To convert: 0 cells</p>
+                <label class="btn-secondary">
+                    Select Different File
+                    <input type="file" id="fileInputAlt" accept=".xlsx,.xls,.csv" hidden>
+                </label>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <p id="status" class="status"></p>
+
+        <!-- Export Button -->
+        <button id="exportBtn" class="btn-primary" disabled>
+            💾  Convert and Save
+        </button>
+
+        <!-- Version -->
+        <p class="version">v1.0.0-web</p>
+    </div>
+
+    <!-- SheetJS for reading + ExcelJS for writing with styles -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/exceljs@4.4.0/dist/exceljs.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
